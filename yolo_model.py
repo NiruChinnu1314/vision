@@ -12,7 +12,7 @@ class BoltDetector:
         3: (0, 0, 255)     # no_bolt -> red
     }
 
-    def __init__(self, model_path="gray_scale.pt", device=None):
+    def __init__(self, model_path="color_bolt.pt", device=None):
         self.device = device if device else ("cuda" if torch.cuda.is_available() else "cpu")
         self.model = YOLO(model_path).to(self.device)
 
